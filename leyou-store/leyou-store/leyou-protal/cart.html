@@ -285,12 +285,15 @@
         },
         methods: {
             loadCarts() {
-                // 先判断登录状态zaifafsaijagfasafasdfaafasfadfafas
+                // 先判断登录状态zaifafsaijagfasafasdfaafasf
                 ly.verifyUser().then(() => {
                   //关俊飞 合并购物车 2018-9-25 16:34:16
                     // 已登录
 					// 登陆状态的购物车
                 //查看购物车前,先看下本地购物车有没有数据
+				
+				//新增一个东西\
+			
                 const uncarts = ly.store.get("LY_CART") || [];
 
                     uncarts.forEach(cartss=>{
@@ -298,7 +301,7 @@
                         if(cartss){
                             ly.http.post("/cart", {skuId: cartss.skuId, num: cartss.num}).then(res => {
                                  ly.store.del("LY_CART")
-                                //查询redis购物车信息返回结果集
+                                //查询redis购物车信息返回结果集 222222
                                 ly.http.get("/cart").then(({data}) => {
                                     this.carts = data;
                                     this.selected = data;
