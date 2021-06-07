@@ -301,7 +301,7 @@
                         if(cartss){
                             ly.http.post("/cart", {skuId: cartss.skuId, num: cartss.num}).then(res => {
                                  ly.store.del("LY_CART")
-                                //查询redis购物车信息返回结果集 222222222
+                                //查询redis购物车信息返回结果集 222222222333
                                 ly.http.get("/cart").then(({data}) => {
                                     this.carts = data;
                                     this.selected = data;
